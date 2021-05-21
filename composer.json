@@ -1,0 +1,19 @@
+{
+    "name": "dkl/common",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Misha Beskin",
+            "email": "beshkin@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "DKL\\": "src/"
+        }
+    }
+}
