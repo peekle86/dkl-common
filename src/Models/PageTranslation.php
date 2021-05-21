@@ -2,7 +2,6 @@
 
 namespace DKL\Models;
 
-use DKL\Page;
 use GeneaLabs\LaravelModelCaching\CachedBuilder;
 use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 use Illuminate\Database\Eloquent\Builder;
