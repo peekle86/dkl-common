@@ -1,19 +1,24 @@
 {
-    "name": "dkl/common",
-    "type": "library",
-    "authors": [
-        {
-            "name": "Misha Beskin",
-            "email": "beshkin@gmail.com"
-        }
-    ],
-    "require": {},
-    "require-dev": {
-        "phpunit/phpunit": "^9.2"
-    },
-    "autoload": {
-        "psr-4": {
-            "DKL\\": "src/"
-        }
+  "name": "dkl/common",
+  "type": "library",
+  "description": "DKL common package",
+  "authors": [
+    {
+      "name": "Misha Beskin",
+      "email": "beshkin@gmail.com"
     }
+  ],
+  "require": {
+    "nesbot/carbon": "^2.48",
+    "illuminate/database": "^8.42",
+    "genealabs/laravel-model-caching": "^0.11.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "DKL\\": "src/"
+    }
+  }
 }
