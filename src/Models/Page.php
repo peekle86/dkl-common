@@ -1,9 +1,7 @@
 <?php
 
-namespace DKL;
+namespace DKL\Models;
 
-use DKL\Models\Image;
-use DKL\Models\PageTranslation;
 use GeneaLabs\LaravelModelCaching\CachedBuilder;
 use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 use Illuminate\Database\Eloquent\Builder;
