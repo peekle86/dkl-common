@@ -79,7 +79,7 @@ class Tracking extends Model
         return $this->belongsTo(Parcel::class);
     }
 
-    public function scopeNotDelivered(Builder $query)
+    public function scopeNotDelivered(Builder $query): Builder
     {
         return $query->where('status_code', '!=', TrackingStatuses::DELIVERED);
     }
