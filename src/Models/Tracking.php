@@ -2,6 +2,7 @@
 
 namespace DKL\Models;
 
+use DKL\Constants\TrackingStatuses;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -76,5 +77,10 @@ class Tracking extends Model
     public function parcel(): BelongsTo
     {
         return $this->belongsTo(Parcel::class);
+    }
+
+    public function scopeNotDelivered(Builder $query)
+    {
+        return $query->where('status_code', '!=', TrackingStatuses::DELIVERED);
     }
 }
