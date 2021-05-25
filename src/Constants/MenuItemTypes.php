@@ -14,4 +14,5 @@ class MenuItemTypes
     const CALENDAR = 'calendar';
     const COURIER = 'courier';
     const PRICE_REQUEST = 'price_request';
+    const TRACKING = 'tracking';
 }
