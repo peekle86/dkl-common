@@ -68,6 +68,7 @@ class TrackingHistory extends Model
         $this->attributes['hawb_id'] = $tracking->hawb_id;
         $this->attributes['status'] = $tracking->status;
         $this->attributes['status_code'] = $tracking->status_code;
+        $this->attributes['notes'] = $tracking->notes;
         $this->attributes['location'] = $tracking->location;
         $this->attributes['signature'] = $tracking->signature;
         $this->attributes['status_date'] = $tracking->status_date;

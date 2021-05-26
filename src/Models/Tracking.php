@@ -18,6 +18,7 @@ use Illuminate\Support\Carbon;
  * @property int $parcel_id
  * @property int $carrier_id
  * @property string $status
+ * @property string $notes
  * @property string|null $signature
  * @property string $status_date
  * @property string $status_time
@@ -58,6 +59,7 @@ class Tracking extends Model
         'hawb_id',
         'status',
         'status_code',
+        'notes',
         'location',
         'signature',
         'status_date',
