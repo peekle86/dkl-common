@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
+use ParcelHelpers;
 
 /**
  * DKL\Models\Parcel
@@ -151,7 +152,7 @@ class Parcel extends Model
                 'senderAddress',
                 function (Builder $query) use ($key) {
                     $query->where('name', 'like', '%' . $key . '%')
-                    ->orWhere('company', 'like', '%' . $key . '%');
+                        ->orWhere('company', 'like', '%' . $key . '%');
                 }
             );
         }
@@ -232,19 +233,7 @@ class Parcel extends Model
 
     public function getVolumentricWeightAttribute(): string
     {
-        $divider = preg_match("/.*AIR.*/", $this->delivery_type) ? 6000 : 5000;
-        $deliveryType = $this->delivery_type;
-        return $this->places->sum(
-            function ($place) use ($deliveryType, $divider) {
-                $totalWeight = 0;
-                if ($deliveryType == DeliveryTypes::ROAD_EXPRESS) {
-                    $totalWeight += ($place->x / 100) * ($place->y / 100) * ($place->z / 100) * 333 * $place->quantity;
-                } else {
-                    $totalWeight = ($place->x * $place->y * $place->z / $divider) * $place->quantity;
-                }
-                return number_format($totalWeight, 2);
-            }
-        );
+        return ParcelHelpers::volumetricWeight($this->delivery_type, $this->places);
     }
 
     public function getDklHawbAttribute(): string

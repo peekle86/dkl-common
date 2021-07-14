@@ -31,4 +31,10 @@ class DeliveryTypes
         self::EXPORT_AIR_FREIGHT_DOOR_TO_AIRPORT => "Export Air freight<br/> door-to-airport",
         self::ROAD_FREIGHT => "Road freight",
     ];
+
+    const AIR_DELIVERY_TYPES = [
+        self::EXPORT_AIR_FREIGHT_DOOR_TO_DOOR,
+        self::EXPORT_AIR_FREIGHT_AIRPORT_TO_AIRPORT,
+        self::EXPORT_AIR_FREIGHT_DOOR_TO_AIRPORT,
+    ];
 }
