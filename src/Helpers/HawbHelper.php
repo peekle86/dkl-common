@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helpers;
+namespace DKL\Helpers;
 
 use DKL\Models\Carrier;
 use DKL\Models\Domain;
