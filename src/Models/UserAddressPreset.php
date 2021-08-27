@@ -16,6 +16,11 @@ class UserAddressPreset extends Model
         return $this->belongsTo(Address::class);
     }
 
+    public function scopeAny($query)
+    {
+        return $query;
+    }
+
     public static function filter($filter = [], $domainId = 0)
     {
         $preset = self::any()->where('domain_id', $domainId);
