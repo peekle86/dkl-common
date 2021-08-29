@@ -191,11 +191,11 @@ class Parcel extends Model
 
         if (isset($filter['starting'])) {
             $key = $filter['starting'];
-            $parcel = $parcel->where('created_at', '>=', $key);
+            $parcel = $parcel->where('created_at', '>=', $key . ' 00:00:00');
         }
         if (isset($filter['till'])) {
             $key = $filter['till'];
-            $parcel = $parcel->where('created_at', '<=', $key);
+            $parcel = $parcel->where('created_at', '<=', $key . ' 23:59:59');
         }
 
         return $parcel;
