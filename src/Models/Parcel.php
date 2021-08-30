@@ -84,6 +84,7 @@ class Parcel extends Model
 
     protected $appends = [
         'isDocument',
+        'totalPrice',
         'totalQuantity',
         'totalWeight',
         'volumentricWeight',
@@ -209,6 +210,15 @@ class Parcel extends Model
         return $this->places->every(
             function ($place) {
                 return $place->is_document == 1;
+            }
+        );
+    }
+
+    public function getTotalPriceAttribute(): string
+    {
+        return $this->places->sum(
+            function ($place) {
+                return $place->price;
             }
         );
     }
